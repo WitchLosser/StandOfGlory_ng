@@ -1,14 +1,13 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CardModule } from 'primeng/card';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule } from 'primeng/accordion';
+import { PrimeModule } from './components/primeng_modules/prime.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { HeroCardComponent } from './components/heroes/hero-card/hero-card.component';
 import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.component';
+
 
 
 @NgModule({
@@ -20,9 +19,8 @@ import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    CardModule,
-    AccordionModule
+    PrimeModule  
+
   ],
   providers: [],
   bootstrap: [AppComponent]
