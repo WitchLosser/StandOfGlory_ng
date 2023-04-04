@@ -3,11 +3,11 @@ export interface IHeroCard {
     name: string;
     imagePath: string;
     battalionId: number;
+    cityId: number;
 }
 
 export interface IHeroDetails extends IHeroCard {
     story: string;
-    cityId: number;
     birthDay: Date;
     dateOfDeath: Date;
     cardNumber: number;

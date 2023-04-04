@@ -10,4 +10,5 @@ import { IHeroCard } from '../hore';
 export class HeroCardComponent {
   @Input()
   hero?: IHeroCard;
+  
 }
