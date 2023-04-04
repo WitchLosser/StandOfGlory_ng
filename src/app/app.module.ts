@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { CardModule } from 'primeng/card';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule } from 'primeng/accordion';
+import { PrimeModule } from './components/primeng_modules/prime.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
+
 
 
 @NgModule({
@@ -16,9 +15,8 @@ import { AppComponent } from './components/app/app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule,
-    CardModule,
-    AccordionModule
+    PrimeModule  
+
   ],
   providers: [],
   bootstrap: [AppComponent]
