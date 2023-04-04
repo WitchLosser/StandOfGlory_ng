@@ -7,11 +7,13 @@ import { AccordionModule } from 'primeng/accordion';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
+import { HeroCardComponent } from './components/heroes/hero-card/hero-card.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroCardComponent
   ],
   imports: [
     BrowserModule,
