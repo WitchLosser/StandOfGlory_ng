@@ -4,9 +4,10 @@ import { CommonModule } from '@angular/common';
 // Modules
 import { CardModule } from 'primeng/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AccordionModule } from 'primeng/accordion';
 // Buttons
 import { ButtonModule } from 'primeng/button';
+//Galleria
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
     declarations: [],
@@ -16,8 +17,8 @@ import { ButtonModule } from 'primeng/button';
     exports: [
         BrowserAnimationsModule,
         CardModule,
-        AccordionModule,
-        ButtonModule   
+        ButtonModule,
+        GalleriaModule   
     ]
 })
 export class PrimeModule { }
