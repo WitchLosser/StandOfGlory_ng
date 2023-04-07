@@ -7,6 +7,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './components/app/app.component';
 import { HeroCardComponent } from './components/heroes/hero-card/hero-card.component';
 import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.component';
+import { HeroDetailsComponent } from './components/heroes/hero-details/hero-details.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -14,7 +16,9 @@ import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.co
   declarations: [
     AppComponent,
     HeroCardComponent,
-    HeroCardsComponent
+    HeroCardsComponent,
+    HeroDetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
