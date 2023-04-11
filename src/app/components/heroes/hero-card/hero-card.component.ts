@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { IHeroCard } from '../hore';
+import { Component, Input, OnInit } from '@angular/core';
+import { IHero } from '../hore';
 
 @Component({
   selector: 'app-hero-card',
@@ -7,8 +7,16 @@ import { IHeroCard } from '../hore';
   styleUrls: ['./hero-card.component.scss']
 })
 
-export class HeroCardComponent {
+export class HeroCardComponent implements OnInit {
   @Input()
-  hero?: IHeroCard;
+  hero?: IHero;
+  
+  city: string | undefined;
+  battalion: string | undefined;
+  
+  ngOnInit(): void {
+    this.city = this.hero?.city?.name;
+    this.battalion = this.hero?.battalion?.name;
+  }
   
 }

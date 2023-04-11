@@ -9,6 +9,7 @@ import { HeroCardComponent } from './components/heroes/hero-card/hero-card.compo
 import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.component';
 import { HeroDetailsComponent } from './components/heroes/hero-details/hero-details.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -23,7 +24,8 @@ import { HomeComponent } from './components/home/home.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimeModule  
+    PrimeModule,
+    HttpClientModule
 
   ],
   providers: [],
