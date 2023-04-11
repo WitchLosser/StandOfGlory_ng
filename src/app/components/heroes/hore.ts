@@ -1,14 +1,21 @@
-export interface IHeroCard {
+export interface IHero {
     id: number;
     name: string;
     imagePath: string;
-    battalionId: number;
-    cityId: number;
-}
-
-export interface IHeroDetails extends IHeroCard {
+    battalion: IBattalion;
+    city: ICity;
     story: string;
     birthDay: Date;
     dateOfDeath: Date;
     cardNumber: number;
+}
+
+export interface ICity {
+    id: number;
+    name: string;
+}
+
+export interface IBattalion {
+    id: number;
+    name: string;
 }

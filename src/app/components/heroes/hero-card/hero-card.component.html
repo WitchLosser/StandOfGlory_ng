@@ -3,8 +3,8 @@
         <img alt="Card" src={{hero?.imagePath}} />
     </ng-template>
 
-    <div>City: {{hero?.cityId}}</div>
-    <div>Battalion: {{hero?.battalionId}}</div>
+    <div>City: {{city}}</div>
+    <div>Battalion: {{battalion}}</div>
     
     <ng-template pTemplate="footer">
         <button label="Details" class="p-element p-ripple p-button-raised p-button-text p-button-plain mb-2 p-button p-component" [routerLink]="['/hero-details', hero?.id]">Details</button>
