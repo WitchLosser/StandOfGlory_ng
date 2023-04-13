@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Observable } from 'rxjs';
-import { IHero } from './hore';
+import { IBattalion, ICity, ICreateHero, IHero } from './hore';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -21,9 +21,14 @@ export class HeroService {
   getAll(): Observable<IHero[]> {
     return this.http.get<IHero[]>(this.url);
   }
-  // getGenres(): Observable<IGenre[]> {
-  //   return this.http.get<IGenre[]>(`${this.url}/genres`);
-  // }
+
+  getCities(): Observable<ICity[]> {
+    return this.http.get<ICity[]>(`${this.url}/battalions`);
+  }
+
+  getBattalions(): Observable<IBattalion[]> {
+    return this.http.get<IBattalion[]>(`${this.url}/cities`);
+  }
 
   getById(id: number): Observable<IHero> {
     return this.http.get<IHero>(`${this.url}/${id}`);
@@ -33,7 +38,7 @@ export class HeroService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  // create(movie: ICreateMovieDto): Observable<any> {
-  //   return this.http.post(`${this.url}`, movie);
-  // }
+  create(hero: ICreateHero): Observable<any> {
+    return this.http.post(this.url, hero, );
+  }
 }
