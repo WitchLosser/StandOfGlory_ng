@@ -10,6 +10,7 @@ import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.co
 import { HeroDetailsComponent } from './components/heroes/hero-details/hero-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCardComponent } from './components/heroes/add-card/add-card.component';
 
 
 
@@ -19,7 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     HeroCardComponent,
     HeroCardsComponent,
     HeroDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    AddCardComponent
   ],
   imports: [
     BrowserModule,

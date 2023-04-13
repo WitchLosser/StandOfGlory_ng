@@ -8,6 +8,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 //Galleria
 import { GalleriaModule } from 'primeng/galleria';
+//Divider
+import { DividerModule } from 'primeng/divider';
 
 @NgModule({
     declarations: [],
@@ -18,7 +20,8 @@ import { GalleriaModule } from 'primeng/galleria';
         BrowserAnimationsModule,
         CardModule,
         ButtonModule,
-        GalleriaModule   
+        GalleriaModule,
+        DividerModule   
     ]
 })
 export class PrimeModule { }
