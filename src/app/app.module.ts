@@ -10,7 +10,8 @@ import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.co
 import { HeroDetailsComponent } from './components/heroes/hero-details/hero-details.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule } from '@angular/common/http';
-import { AddCardComponent } from './components/heroes/add-card/add-card.component';
+import { AddHeroComponent } from './components/heroes/add-hero/add-hero.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,13 +22,14 @@ import { AddCardComponent } from './components/heroes/add-card/add-card.componen
     HeroCardsComponent,
     HeroDetailsComponent,
     HomeComponent,
-    AddCardComponent
+    AddHeroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PrimeModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

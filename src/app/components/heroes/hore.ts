@@ -10,6 +10,17 @@ export interface IHero {
     cardNumber: number;
 }
 
+export interface ICreateHero {
+    name: string;
+    imagePath: string;
+    battalionId: number;
+    cityId: number;
+    story: string;
+    birthDate: Date;
+    dateOfDeath: Date;
+    cardNumber: string;
+}
+
 export interface ICity {
     id: number;
     name: string;
