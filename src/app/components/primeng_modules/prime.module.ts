@@ -8,6 +8,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ButtonModule } from 'primeng/button';
 //Galleria
 import { GalleriaModule } from 'primeng/galleria';
+// Calendar
+import { CalendarModule } from 'primeng/calendar';
+// Input Text
+import { InputTextModule } from 'primeng/inputtext';
+// Dropdown
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
     declarations: [],
@@ -18,7 +24,10 @@ import { GalleriaModule } from 'primeng/galleria';
         BrowserAnimationsModule,
         CardModule,
         ButtonModule,
-        GalleriaModule   
+        GalleriaModule,
+        CalendarModule,
+        InputTextModule,
+        DropdownModule
     ]
 })
 export class PrimeModule { }

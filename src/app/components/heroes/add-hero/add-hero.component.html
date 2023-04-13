@@ -1,0 +1,35 @@
+<h1>Add new Hero</h1>
+
+<form [formGroup]="heroForm" (ngSubmit)="showResult()">
+    <div class="card">
+        <div class="field">
+            <input pInputText formControlName="name" type="text" placeholder="Name"/>
+        </div>
+        <div class="field">
+            <p-calendar formControlName="birthDate" placeholder="Birth date"></p-calendar>
+        </div>
+        <div class="field">
+            <p-calendar formControlName="dateOfDeath" placeholder="Date of death"></p-calendar>
+        </div>
+        <div class="field">
+            <input pInputText formControlName="story" type="text" placeholder="Story"/>
+        </div>
+        <div class="field">
+            <p-dropdown [options]="cities" formControlName="cityId" optionLabel="name"></p-dropdown>
+        </div>
+        <div class="field">
+            <p-dropdown [options]="battalions" formControlName="battalionId" optionLabel="name"></p-dropdown>
+        </div>
+        <div class="field">
+            <input pInputText formControlName="cardNumber" type="text" placeholder="Card number"/>
+        </div>
+        <div class="field">
+            <input pInputText formControlName="imagePath" type="url" placeholder="Image path"/>
+        </div>
+
+        
+
+        <p-button type="submit" label="Create"></p-button>
+        <p-button mat-flat-button type="button" routerLink="/hero-list" styleClass="p-button-secondary">Go Back</p-button>
+    </div>
+</form>
