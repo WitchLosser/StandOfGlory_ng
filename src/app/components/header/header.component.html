@@ -1,0 +1,20 @@
+<div class="card mb-3">
+    <p-menubar [model]="items">
+        <ng-template pTemplate="end">
+            <div *ngIf="!accountService.isAuthorized()">
+                <p-button  styleClass="p-button-link mx-2"  routerLink="/register">
+                    <span class="pi pi-user-plus"> Register </span> 
+                </p-button>
+                <p-button  styleClass="p-button-outlined p-button-success mx-2"  routerLink="/login">
+                    <span class="pi pi-user"> Login</span>
+                </p-button>
+            </div>
+            <div *ngIf="accountService.isAuthorized()">
+                <p-button label="Secondary" styleClass="p-button-secondary mx-2"  (click)="logout()">
+                    logout  <span class="pi pi-user"></span>
+                </p-button>
+                
+            </div>
+        </ng-template>
+    </p-menubar>
+</div>

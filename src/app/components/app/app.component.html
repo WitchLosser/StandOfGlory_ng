@@ -1,12 +1,12 @@
 <!-- <app-hero-cards></app-hero-cards> -->
 <!-- app-hero-details -->
+<app-header></app-header>
 
-<div class="grid">
-    <div class="col-fixed" style="width:250px">Fixed</div>      
-    <!-- <app-hero-details [ngClass]="'col'"></app-hero-details> -->
-    <!-- <app-hero-cards [ngClass]="'col'"></app-hero-cards> -->
-    <div class="col">
-        
+    <!-- <div class="col-fixed" style="width:250px">Fixed</div>       -->
+    <div class="card">
         <router-outlet></router-outlet>
+        <p-divider align="center">
+            <span  styleclass="p-tag p-button-outlined" >Footer Info</span>
+        </p-divider>
     </div>
-</div>
+

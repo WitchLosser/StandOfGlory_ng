@@ -1,4 +1,8 @@
 <h1>Add new Hero</h1>
+<div *ngIf="unauthorized" class="text-center">
+    <img width="100" src="https://cdn-icons-png.flaticon.com/512/4413/4413923.png" alt="">
+    <p>Unauthorized error!</p>
+</div>
 
 <form [formGroup]="heroForm" (ngSubmit)="showResult()">
     <div class="card">
@@ -24,12 +28,11 @@
             <input pInputText formControlName="cardNumber" type="text" placeholder="Card number"/>
         </div>
         <div class="field">
-            <input pInputText formControlName="imagePath" type="url" placeholder="Image path"/>
+            <input pInputText (change)="onFileChanged($event)" type="file" accept=".jpg,.png" placeholder="Image path"/>
         </div>
 
         
-
         <p-button type="submit" label="Create"></p-button>
-        <p-button mat-flat-button type="button" routerLink="/hero-list" styleClass="p-button-secondary">Go Back</p-button>
+        <p-button mat-flat-button type="button" routerLink="/hero-list" styleClass=" p-button-secondary">Go Back</p-button>
     </div>
 </form>

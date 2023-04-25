@@ -12,7 +12,7 @@ export interface IHero {
 
 export interface ICreateHero {
     name: string;
-    imagePath: string;
+    image: File;
     battalionId: number;
     cityId: number;
     story: string;

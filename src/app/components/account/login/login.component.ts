@@ -1,0 +1,38 @@
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { AccountService } from '../account.service';
+import { ILoginRequest } from '../account';
+import { Route, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.scss']
+})
+export class LoginComponent {
+  hide: boolean = true;
+
+  loginForm = this.fb.group({
+    username: ['', Validators.required],
+    password: ['', Validators.required]
+  });
+
+  constructor(private fb: FormBuilder, private accountService: AccountService, private router: Router) { }
+
+  login(): void {
+    if (!this.loginForm.valid) {
+      alert("Invalid value, please enter again!");
+      return;
+    }
+
+    let request = this.loginForm.value as ILoginRequest;
+
+    // send POST request
+    this.accountService.login(request).subscribe(res => {
+
+      this.accountService.saveToken(res.token);
+      console.log("Logged In! Token: " + res.token);
+      this.router.navigateByUrl('/movie-list');
+    });
+  }
+}
