@@ -9,9 +9,16 @@ import { HeroCardComponent } from './components/heroes/hero-card/hero-card.compo
 import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.component';
 import { HeroDetailsComponent } from './components/heroes/hero-details/hero-details.component';
 import { HomeComponent } from './components/home/home.component';
-import { HttpClientModule } from '@angular/common/http';
+
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 import { AddHeroComponent } from './components/heroes/add-hero/add-hero.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { LoginComponent } from './components/account/login/login.component';
+import { JwtInterceptor } from './components/account/jwt.interceptor';
+import { HeaderComponent } from './components/header/header.component';
+
 
 
 
@@ -22,7 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     HeroCardsComponent,
     HeroDetailsComponent,
     HomeComponent,
-    AddHeroComponent
+    AddHeroComponent,
+    LoginComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
 
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

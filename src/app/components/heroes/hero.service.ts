@@ -38,7 +38,7 @@ export class HeroService {
     return this.http.delete(`${this.url}/${id}`);
   }
 
-  create(hero: ICreateHero): Observable<any> {
-    return this.http.post(this.url, hero, );
+  create(hero: FormData): Observable<any> {
+    return this.http.post(this.url, hero);
   }
 }
