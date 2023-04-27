@@ -10,8 +10,9 @@
                 </p-button>
             </div>
             <div *ngIf="accountService.isAuthorized()">
-                <p-button styleClass="p-button-secondary mx-2"  (click)="logout()">
-                    logout  <span class="pi pi-user"></span>
+                <p-button label="Logout" styleClass="p-button-secondary mx-2"  (click)="logout()">
+                 <span class="pi pi-user"></span>
+
                 </p-button>
                 
             </div>
