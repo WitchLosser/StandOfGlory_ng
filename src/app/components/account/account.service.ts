@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { ILoginRequest, ILoginResponse } from './account';
+import { ILoginRequest, ILoginResponse, IRegisterRequest } from './account';
 
 @Injectable({
   providedIn: 'root'
@@ -22,6 +22,17 @@ export class AccountService {
       { 
         username: data.username,
         password: data.password 
+      }
+    );
+  }
+
+  register(data: IRegisterRequest): Observable<IRegisterRequest> {
+    return this.http.post<IRegisterRequest>(
+      `${this.url}/register`, 
+      { 
+        username: data.username,
+        password: data.password,
+        email: data.email
       }
     );
   }

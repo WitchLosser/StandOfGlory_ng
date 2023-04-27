@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/account/login/login.component';
 import { JwtInterceptor } from './components/account/jwt.interceptor';
 import { HeaderComponent } from './components/header/header.component';
+import { RegisterComponent } from './components/account/register/register.component';
 
 
 
@@ -31,7 +32,8 @@ import { HeaderComponent } from './components/header/header.component';
     HomeComponent,
     AddHeroComponent,
     LoginComponent,
-    HeaderComponent
+    HeaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
