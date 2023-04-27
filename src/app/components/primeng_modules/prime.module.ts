@@ -19,6 +19,8 @@ import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 // Menu
 import { MenubarModule } from 'primeng/menubar';
+//ListBox
+import { ListboxModule } from 'primeng/listbox';
 @NgModule({
     declarations: [],
     imports: [
@@ -33,7 +35,8 @@ import { MenubarModule } from 'primeng/menubar';
         CalendarModule,
         InputTextModule,
         DropdownModule,
-        MenubarModule
+        MenubarModule,
+        ListboxModule
 
     ]
 })

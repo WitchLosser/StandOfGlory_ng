@@ -1,3 +1,30 @@
-<div class="col card flex flex-wrap gap-3 justify-content-center">
-    <app-hero-card class="card" *ngFor="let h of heroes" [hero]="h"></app-hero-card>
+<div class="grid">
+  <div class="col-fixed">
+    <p-listbox
+      [options]="cities"
+      optionLabel="name"
+      [filter]="true"
+      [listStyle]="{ 'max-height': '250px' }"
+      [style]="{ width: '15rem' }"
+      (onClick)="getListbyCity()"
+      styleClass="mb-3"
+    ></p-listbox>
+    <p-listbox
+      [options]="battalions"
+      [class.selected]="selectedBattalion" type="button" 
+      optionLabel="name"
+      [filter]="true"
+      [listStyle]="{ 'max-height': '250px' }"
+      [style]="{ width: '15rem' }"
+      (onClick)="getListbyBattalion()"
+      styleClass="mb-3"
+    ></p-listbox>
+  </div>
+  <div class="col card flex flex-wrap gap-3 justify-content-center">
+    <app-hero-card
+      class="card"
+      *ngFor="let h of heroes"
+      [hero]="h"
+    ></app-hero-card>
+  </div>
 </div>

@@ -25,11 +25,15 @@ export class HeroService {
   getCities(): Observable<ICity[]> {
     return this.http.get<ICity[]>(`${this.url}/battalions`);
   }
-
+  getbyCity(citynName: string): Observable<IHero[]> {
+    return this.http.get<IHero[]>(`${this.url}/${citynName}/GetByCity`);
+  }
   getBattalions(): Observable<IBattalion[]> {
     return this.http.get<IBattalion[]>(`${this.url}/cities`);
   }
-
+  getbyBattalions(battalionName: string): Observable<IHero[]> {
+    return this.http.get<IHero[]>(`${this.url}/${battalionName}/GetByBattalio`);
+  }
   getById(id: number): Observable<IHero> {
     return this.http.get<IHero>(`${this.url}/${id}`);
   }
