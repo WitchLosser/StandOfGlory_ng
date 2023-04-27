@@ -41,4 +41,8 @@ export class HeroService {
   create(hero: FormData): Observable<any> {
     return this.http.post(this.url, hero);
   }
+
+  searchByName(name: string): Observable<any> {
+    return this.http.get(`${this.url}/${name}/SearchName`);
+  }
 }

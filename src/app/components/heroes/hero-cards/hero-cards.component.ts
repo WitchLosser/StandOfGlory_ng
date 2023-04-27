@@ -10,6 +10,7 @@ import { HeroService } from '../hero.service';
 })
 export class HeroCardsComponent implements OnInit {
   heroes: IHero[] = [];
+  searchValue: string = "";
 
   constructor(private heroService: HeroService) {
   }
@@ -20,4 +21,10 @@ export class HeroCardsComponent implements OnInit {
     })
   }
 
+  searchByName() {
+    this.heroService.searchByName(this.searchValue).subscribe(res => {
+      this.heroes = res;
+    });
+  }
+  
 }

@@ -1,3 +1,10 @@
+<div class="flex justify-content-center min-w-500" >
+    <span class="p-input-icon-left">
+        <i class="pi pi-search" (click)="searchByName()"></i>
+        <input type="text" [(ngModel)]="searchValue" pInputText/>
+    </span>
+</div>
+
 <div class="col card flex flex-wrap gap-3 justify-content-center">
     <app-hero-card class="card" *ngFor="let h of heroes" [hero]="h"></app-hero-card>
 </div>
