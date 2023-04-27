@@ -32,7 +32,7 @@ export class LoginComponent {
 
       this.accountService.saveToken(res.token);
       console.log("Logged In! Token: " + res.token);
-      this.router.navigateByUrl('/movie-list');
+      this.router.navigateByUrl('movie-list');
     });
   }
 }

@@ -6,3 +6,9 @@ export interface ILoginRequest {
 export interface ILoginResponse {
     token: string;
 }
+
+export interface IRegisterRequest {
+    username: string;
+    password: string;
+    email: string;
+}

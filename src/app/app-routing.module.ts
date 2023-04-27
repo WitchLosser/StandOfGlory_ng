@@ -6,13 +6,15 @@ import { HeroCardsComponent } from './components/heroes/hero-cards/hero-cards.co
 import { AddHeroComponent } from './components/heroes/add-hero/add-hero.component';
 import { LoginComponent } from './components/account/login/login.component';
 import { AuthorizedGuard } from './authorized.guard';
+import { RegisterComponent } from './components/account/register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'hero-details/:id', component: HeroDetailsComponent },
   { path: 'hero-list', component: HeroCardsComponent },
   { path: 'add-hero', component: AddHeroComponent, canActivate: [AuthorizedGuard]},
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  {path: 'register', component: RegisterComponent}
 ];
 
 @NgModule({

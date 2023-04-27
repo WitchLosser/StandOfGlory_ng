@@ -1,0 +1,14 @@
+<form [formGroup]="registerForm" (ngSubmit)="register()">
+    <div class="card">
+        <div class="field">
+            <input pInputText formControlName="username" type="text" placeholder="Username"/>
+        </div>
+        <div class="field">
+            <input pInputText formControlName="password" type="password" placeholder="Password"/>
+        </div>
+        <div class="field">
+            <input pInputText formControlName="email" type="email" placeholder="Email"/>
+        </div>
+        <p-button type="submit" styleClass="p-button-outlined p-button-primary mb-2" label="Create"></p-button>
+    </div>
+</form>
