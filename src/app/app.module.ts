@@ -14,7 +14,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { AddHeroComponent } from './components/heroes/add-hero/add-hero.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { LoginComponent } from './components/account/login/login.component';
 import { JwtInterceptor } from './components/account/jwt.interceptor';
@@ -42,7 +42,8 @@ import { RegisterComponent } from './components/account/register/register.compon
     AppRoutingModule,
     PrimeModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
 
   ],
   providers: [{

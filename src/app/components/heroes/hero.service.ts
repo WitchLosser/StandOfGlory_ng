@@ -36,12 +36,14 @@ export class HeroService {
   create(hero: FormData): Observable<any> {
     return this.http.post(this.url, hero);
   }
+
   getHeroByCity(citynName: string): Observable<any> {
     return this.http.get(`${this.url}/${citynName}/GetByCity`);
   }
   getHeroByBattalions(battalionName: string): Observable<any> {
     return this.http.get(`${this.url}/${battalionName}/GetByBattalio`);
   }
+
   searchByName(name: string): Observable<any> {
     return this.http.get(`${this.url}/${name}/SearchName`);
   }

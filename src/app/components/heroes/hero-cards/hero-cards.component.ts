@@ -14,6 +14,8 @@ export class HeroCardsComponent implements OnInit {
   battalions: IBattalion[] = [];
   selectedBattalion?: IBattalion;
   selectedCity?: ICity;
+  searchValue: string = "";
+
 
   constructor(private heroService: HeroService) {}
 
@@ -45,4 +47,9 @@ export class HeroCardsComponent implements OnInit {
         .subscribe(res => {this.heroes = res});
     }
   };
+  searchByName() {
+    this.heroService.searchByName(this.searchValue).subscribe(res => {
+      this.heroes = res;
+    });
+  }
 }
