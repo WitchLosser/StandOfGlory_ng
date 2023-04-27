@@ -6,7 +6,7 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-hero-cards',
   templateUrl: './hero-cards.component.html',
-  styleUrls: ['./hero-cards.component.scss']
+  styleUrls: ['./hero-cards.component.scss'],
 })
 export class HeroCardsComponent implements OnInit {
   heroes: IHero[] = [];
@@ -15,29 +15,34 @@ export class HeroCardsComponent implements OnInit {
   selectedBattalion?: IBattalion;
   selectedCity?: ICity;
 
-  constructor(private heroService: HeroService) {
-  }
+  constructor(private heroService: HeroService) {}
 
   ngOnInit(): void {
     this.heroService.getAll().subscribe(res => {
       this.heroes = res;
-    })
-    
-    this.heroService.getCities().subscribe(res => this.cities = res);
-    this.heroService.getBattalions().subscribe(res => this.battalions = res);
-  }
-  getListbyBattalion(): void{
-    console.log(this.selectedBattalion);
-    console.log(this.cities);
+    });
+
+    this.heroService
+     .getCities()
+      .subscribe(res => {this.cities = res});
+    this.heroService
+      .getBattalions()
+      .subscribe(res => {this.battalions = res});
+    };
+    getListbyCity() {
+      if (this.selectedCity) {
+        this.heroService
+          .getHeroByCity(this.selectedCity.name)
+          .subscribe(res => {this.heroes = res});
+        console.log(this.selectedCity);
+        console.log(this.heroes);
+      }
+    };
+  getListbyBattalion() {
     if (this.selectedBattalion) {
-      
-      this.heroService.getbyBattalions(this.selectedBattalion?.name).subscribe(res => this.heroes = res);
+      this.heroService
+        .getHeroByBattalions(this.selectedBattalion.name)
+        .subscribe(res => {this.heroes = res});
     }
-  }
-  getListbyCity(): void{
-    
-    if (this.selectedCity) {
-      this.heroService.getbyCity(this.selectedCity?.name).subscribe(res => this.heroes = res);
-    }
-  }
+  };
 }

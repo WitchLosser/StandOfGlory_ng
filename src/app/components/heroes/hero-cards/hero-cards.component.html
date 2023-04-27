@@ -1,24 +1,25 @@
 <div class="grid">
   <div class="col-fixed">
     <p-listbox
-      [options]="cities"
-      optionLabel="name"
-      [filter]="true"
-      [listStyle]="{ 'max-height': '250px' }"
-      [style]="{ width: '15rem' }"
-      (onClick)="getListbyCity()"
+    [options]="battalions"
+    [(ngModel)]="selectedBattalion"
+    optionLabel="name"
+    [filter]="true"
+    [listStyle]="{ 'max-height': '250px' }"
+    [style]="{ width: '15rem' }"
+      (click)="getListbyBattalion()"
       styleClass="mb-3"
-    ></p-listbox>
-    <p-listbox
-      [options]="battalions"
-      [class.selected]="selectedBattalion" type="button" 
-      optionLabel="name"
-      [filter]="true"
-      [listStyle]="{ 'max-height': '250px' }"
-      [style]="{ width: '15rem' }"
-      (onClick)="getListbyBattalion()"
-      styleClass="mb-3"
-    ></p-listbox>
+      ></p-listbox>
+      <p-listbox
+        [options]="cities"
+        [(ngModel)]="selectedCity"
+        optionLabel="name"
+        [filter]="true"
+        [listStyle]="{ 'max-height': '250px' }"
+        [style]="{ width: '15rem' }"
+        (click)="getListbyCity()"
+        styleClass="mb-3"
+      ></p-listbox>
   </div>
   <div class="col card flex flex-wrap gap-3 justify-content-center">
     <app-hero-card

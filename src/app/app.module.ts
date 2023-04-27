@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { PrimeModule } from './components/primeng_modules/prime.module';
 
@@ -37,6 +38,7 @@ import { RegisterComponent } from './components/account/register/register.compon
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     PrimeModule,
     HttpClientModule,
