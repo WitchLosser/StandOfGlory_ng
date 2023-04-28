@@ -47,6 +47,11 @@ export class HeroCardsComponent implements OnInit {
         .subscribe(res => {this.heroes = res});
     }
   };
+  getAllHeroes(){
+    this.heroService.getAll().subscribe(res => {
+      this.heroes = res;
+    });
+  }
   searchByName() {
     this.heroService.searchByName(this.searchValue).subscribe(res => {
       this.heroes = res;
