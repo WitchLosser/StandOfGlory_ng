@@ -1,5 +1,8 @@
 <div class="card mb-3">
     <p-menubar [model]="items">
+        <ng-template pTemplate="start">
+            <h1>Stand Of Groly</h1>    
+        </ng-template>
         <ng-template pTemplate="end">
             <div *ngIf="!accountService.isAuthorized()">
                 <p-button  styleClass="p-button-info p-button-text"  routerLink="/register">
@@ -15,8 +18,7 @@
                 <p-button styleClass="p-button-secondary p-button-text"  (click)="logout()">
                     Logout
                     <span class="pi pi-user"></span>
-                </p-button>
-                
+                </p-button>               
             </div>
         </ng-template>
     </p-menubar>
