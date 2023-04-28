@@ -1,38 +1,27 @@
-<h1>Add new Hero</h1>
 <div *ngIf="unauthorized" class="text-center">
     <img width="100" src="https://cdn-icons-png.flaticon.com/512/4413/4413923.png" alt="">
     <p>Unauthorized error!</p>
 </div>
-
+<div class="flex justify-content-center">
+    <h1>Add new Hero</h1>
+</div>
 <form [formGroup]="heroForm" (ngSubmit)="showResult()">
-    <div class="card">
-        <div class="field">
+    <div class="text-center flex flex-column gap-3 ">
             <input pInputText formControlName="name" type="text" placeholder="Name"/>
-        </div>
-        <div class="field">
-            <p-calendar formControlName="birthDate" placeholder="Birth date"></p-calendar>
-        </div>
-        <div class="field">
-            <p-calendar formControlName="dateOfDeath" placeholder="Date of death"></p-calendar>
-        </div>
-        <div class="field">
-            <input pInputText formControlName="story" type="text" placeholder="Story"/>
-        </div>
-        <div class="field">
-            <p-dropdown [options]="cities" formControlName="cityId" optionLabel="name"></p-dropdown>
-        </div>
-        <div class="field">
-            <p-dropdown [options]="battalions" formControlName="battalionId" optionLabel="name"></p-dropdown>
-        </div>
-        <div class="field">
             <input pInputText formControlName="cardNumber" type="text" placeholder="Card number"/>
-        </div>
-        <div class="field">
+            <input pInputText formControlName="story" type="text" placeholder="Story"/>
             <input pInputText (change)="onFileChanged($event)" type="file" accept=".jpg,.png" placeholder="Image path"/>
-        </div>
+            <div class="flex">
+                <p-calendar formControlName="birthDate" placeholder="Birth date" class="align-self-start"></p-calendar>
+                <div class="mx-4" style="font-size: 35px;">-</div>
+                <p-calendar formControlName="dateOfDeath" placeholder="Date of death" class="align-self-start"></p-calendar>
+            </div>
+            <p-dropdown [options]="cities" formControlName="cityId" optionLabel="name" class="align-self-start"></p-dropdown>
+            <p-dropdown [options]="battalions" formControlName="battalionId" optionLabel="name" class="align-self-start"></p-dropdown>
 
-        
-        <p-button type="submit" label="Create"></p-button>
-        <p-button mat-flat-button type="button" routerLink="/hero-list" styleClass=" p-button-secondary">Go Back</p-button>
+        <div class="flex justify-content-between">
+            <p-button mat-flat-button type="button" routerLink="/hero-list" styleClass="p-button-rounded p-button-info">Go Back</p-button>
+            <p-button type="submit" label="Create" styleClass="p-button-rounded p-button-success"></p-button>
+        </div>
     </div>
 </form>

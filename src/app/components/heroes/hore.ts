@@ -5,7 +5,7 @@ export interface IHero {
     battalion: IBattalion;
     city: ICity;
     story: string;
-    birthDay: Date;
+    birthDate: Date;
     dateOfDeath: Date;
     cardNumber: number;
 }
@@ -13,8 +13,8 @@ export interface IHero {
 export interface ICreateHero {
     name: string;
     image: File;
-    battalionId: number;
-    cityId: number;
+    battalionId?: number;
+    cityId?: number;
     story: string;
     birthDate: Date;
     dateOfDeath: Date;

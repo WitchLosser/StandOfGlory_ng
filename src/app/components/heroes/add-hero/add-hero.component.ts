@@ -28,6 +28,8 @@ export class AddHeroComponent implements OnInit {
 
   cities: ICity[] = [];
   battalions: IBattalion[] = [];
+  selectedCity?: ICity;
+  selectedBattalion?: IBattalion;
 
   ngOnInit(): void {
     this.heroService.getCities().subscribe(res => this.cities = res);
@@ -37,9 +39,13 @@ export class AddHeroComponent implements OnInit {
   }
   showResult() {
     let item: ICreateHero = this.heroForm.value as ICreateHero;
-     item.battalionId = 2;
-     item.cityId = 1;
-     
+    
+    this.selectedBattalion = item.battalionId as unknown as IBattalion;
+    item.battalionId = this.selectedBattalion.id;
+
+    this.selectedCity = item.cityId as unknown as ICity;
+    item.cityId = this.selectedCity.id;
+
      console.log(item);
      
      const formData = new FormData();
@@ -50,6 +56,10 @@ export class AddHeroComponent implements OnInit {
     
     formData.set('birthDate', item.birthDate.toISOString());
     formData.set('dateOfDeath', item.dateOfDeath.toISOString());
+
+    console.log(formData);
+    
+    
     // send to the server
     this.heroService.create(formData).subscribe(res => {
       console.log("Hero was created successfuly!")
