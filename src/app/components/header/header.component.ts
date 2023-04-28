@@ -18,12 +18,12 @@ export class HeaderComponent implements OnInit{
           label: 'List',
           icon: 'pi pi-fw pi-users',
           routerLink: '/hero-list'
-      },
-      {
+        },
+        {
         label: 'Add Hero',
         icon: 'pi pi-fw pi-plus',
         routerLink: '/add-hero'
-    }
+        }
     ];
 }
   logout(): void {
